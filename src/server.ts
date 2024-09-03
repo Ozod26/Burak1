@@ -1,14 +1,6 @@
-// console.log("EXUCUTED");
+import dotenv from "dotenv";
+dotenv.config();
 
-// import moment from "moment";
-// const currentTime = moment().format("YYYY MM DD");
-// console.log(currentTime);
+console.log("PORT:", process.env.PORT);
 
-// const person: string = "Adam";
-// const count: number = 100;
-
-// Architectural pettern: MVC, Dependency Injection, MVP
-// Architectural pettern: BU maalumotlar oqimini va backendni tartibga soladi
-
-// Design pettern: Middleware, Decotar
-// Design pettern: Malul bir qisimlarni ishga tushiradi.
+console.log("MONGO_URL:", process.env.MONGO_URL);
