@@ -3,7 +3,7 @@ Shunday function tuzingki unga integerlardan iborat array pass bolsin va functio
 MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
  */
 
-function getHighestIndex(numbers) {
+function getHighestIndex(numbers: string | any[]) {
   let max = numbers[0];
   let maxIndex = 0;
 
