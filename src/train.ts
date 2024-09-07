@@ -1,18 +1,31 @@
+/** H2-TASK: 
+
+Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+MASALAN: getDigits("m14i1t") return qiladi "141"
+
+*/
+
+function getDigits(input: string): string {
+  return input.replace(/\D/g, "");
+}
+
+console.log(getDigits("m14i1t"));
+
 /** H-TASK: 
 shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
 MASALAN: getPositive([1, -4, 2]) return qiladi "12"
  */
 
-function getPositive(arr: number[]): string {
-  const positiveNumbers = arr
-    .filter((num) => num > 0)
-    .map((num) => num.toString());
+// function getPositive(arr: number[]): string {
+//   const positiveNumbers = arr
+//     .filter((num) => num > 0)
+//     .map((num) => num.toString());
 
-  return positiveNumbers.join("");
-}
+//   return positiveNumbers.join("");
+// }
 
-const result = getPositive([1, -4, 2]);
-console.log(result);
+// const result = getPositive([1, -4, 2]);
+// console.log(result);
 
 /**G-TASK: 
 Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
