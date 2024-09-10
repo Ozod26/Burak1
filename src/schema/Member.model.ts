@@ -18,7 +18,7 @@ const memberSchema = new Schema(
     },
 
     memberNick: {
-      tyoe: String,
+      type: String,
       index: { unique: true, sparse: true },
       required: true,
     },
