@@ -1,3 +1,14 @@
+/* Projcet Standards:
+  - Logging standards
+  - Naming standards
+      function: method, weriable =>  CAMEL  => goHome
+      class => PASCAL                       => MemberService
+      folder => KEBAB                   
+      css    => SNACE                       => button_style 
+
+  - ERROR handling 
+*/
+
 /** H2-TASK: 
 
 Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
@@ -5,11 +16,11 @@ MASALAN: getDigits("m14i1t") return qiladi "141"
 
 */
 
-function getDigits(input: string): string {
-  return input.replace(/\D/g, "");
-}
+// function getDigits(input: string): string {
+//   return input.replace(/\D/g, "");
+// }
 
-console.log(getDigits("m14i1t"));
+// console.log(getDigits("m14i1t"));
 
 /** H-TASK: 
 shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
