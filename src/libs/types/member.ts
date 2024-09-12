@@ -27,3 +27,13 @@ export interface MemberInput {
   memberImage?: string;
   memberPoints?: number;
 }
+
+export interface LoginInput {
+  memberNick: string;
+  memberPassword: string;
+}
+
+// export interface AdminRequest extends Request {
+//   member: Member;
+//   session: Session & { member: Member };
+// }
