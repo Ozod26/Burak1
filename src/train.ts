@@ -1,3 +1,37 @@
+/** TASK I:
+
+Shunday function tuzing, u parametrdagi array ichida eng ko'p
+takrorlangan raqamni topib qaytarsin.
+
+MASALAN: majorityElement([1, 2, 3, 4, 5, 4, 3, 4]); return 4
+
+Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida
+4 soni ko'p takrorlanganligi uchun 4'ni return qilmoqda. */
+
+function majorityElement(arr: number[]): number | null {
+  const countMap: { [key: number]: number } = {};
+  let majorityElem: number | null = null;
+  let maxCount = 0;
+
+  for (const num of arr) {
+    if (countMap[num] === undefined) {
+      countMap[num] = 1;
+    } else {
+      countMap[num]++;
+    }
+
+    if (countMap[num] > maxCount) {
+      maxCount = countMap[num];
+      majorityElem = num;
+    }
+  }
+
+  return majorityElem;
+}
+
+const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
+console.log(result);
+
 /* Projcet Standards:
   - Logging standards
   - Naming standards
