@@ -9,7 +9,7 @@ Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
 bo'lganligi uchun '1'ni qaytarmoqda
  */
 function countVowels(input: string): number {
-  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  const vowels = "aeiouAEIOU";
   let count = 0;
 
   for (let char of input) {
