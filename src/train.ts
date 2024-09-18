@@ -1,6 +1,5 @@
 /*
 TASK K:
-
 Berilayotgan parametr tarkibida nechta unli harf bor
 ekanligini aniqlovchi function tuzing
 
@@ -9,6 +8,18 @@ MASALAN: countVowels("string"); return 1
 Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
 bo'lganligi uchun '1'ni qaytarmoqda
  */
+function countVowels(input: string): number {
+  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let count = 0;
+
+  for (let char of input) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countVowels("string"));
 
 /** TASK J:
 
