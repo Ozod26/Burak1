@@ -9,9 +9,10 @@ import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
 
+// 2 ta pacgae yordamida veriable hosil qiamiz  uni qiymati => ConnectMongoDB
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
-  uri: String(process.env.MONGO_URL),
+  uri: String(process.env.MONGO_URL), //
   collection: "sessions",
 });
 
@@ -26,15 +27,16 @@ app.use(express.json());
 app.use(morgan(MORGAN_FORMAT));
 
 /** 2-SESSIONS **/
-
+// sessionni Middleware  sifatida integrationni amalga oshirish uchun ishlatamiz
+// Session hosil bolganda Mongodbda session colectionga murojat etadi
 app.use(
   session({
-    secret: String(process.env.SESSION_SECRET), // 3-shaxsga korsatish mumkin emas
+    secret: String(process.env.SESSION_SECRET), // secret nu .env ichida hosil qildik va bu  3-shaxsga korsatish mumkin emas
     cookie: {
       maxAge: 1000 * 3600 * 6,
     },
-    store: store,
-    resave: true, // oxirgi kirgan vaqtdan 3 soat davomida. Kirilgan vaqtda ozini yangilaydi //
+    store: store, // yuqorida hosil qilgan  storeni qiymatini beryapmiz
+    resave: true, // oxirgi kirgan vaqtdan 3 soat davomida. Kirilgan vaqtda ozini yangilaydi | agar false? kirganda 13:10gahca bosa yanaa kirsa shu vaqtgacha boladi.
     saveUninitialized: true,
   })
 );
