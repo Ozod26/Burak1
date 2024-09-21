@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
@@ -99,12 +99,10 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
       res.redirect("/admin");
     });
   } catch (err) {
-    console.log("Error, processLogin:", err);
+    console.log("Error, logout:", err);
     res.redirect("/admin");
   }
 };
-
-console.log("******************");
 
 restaurantController.checkAuthSession = async (
   req: AdminRequest,
@@ -120,6 +118,27 @@ restaurantController.checkAuthSession = async (
   } catch (err) {
     console.log("Error, checkAuthSession:", err);
     res.send(err);
+  }
+};
+
+// bu mehtod bizga MUROJATCHI kim ekanligini aniqlab berishi kerak
+// hamda uni restaurant USER ekanligi haqida malumot berishi kerak
+// middleware bolgani uchun NEXT kerak boladi
+
+restaurantController.verifyRestaurant = (
+  req: AdminRequest,
+  res: Response,
+  next: NextFunction // nega? next:  NextFunction
+) => {
+  // req ichidagi sessionni ichidan biz memberni tekshrmz va type aynn RESTAURANT shrt
+  if (req.session?.member?.memberType === MemberType.RESTAURANT) {
+    req.member = req.session.member; // restaurn m,ember bolsagina keyingi jarayonga otadi
+    next();
+  } else {
+    const message = Message.NOT_AUTHENTICATED;
+    res.send(
+      `<script> alert("${message}"); window.location.replace('/admin/login') </script>`
+    );
   }
 };
 
