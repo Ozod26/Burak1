@@ -1,3 +1,21 @@
+/**TASK L:
+
+So'zlarni ketma - ketligini buzmasdan har bir so'zni
+alohida teskarisiga o'girib beradigan fucntion tuzing.
+Funtion yagona string qabul qilsin
+
+MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
+Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda */
+
+function reverseSentence(sentence: string): string {
+  return sentence
+    .split(" ")
+    .map((word) => word.split("").reverse().join(""))
+    .join(" ");
+}
+
+console.log(reverseSentence("we like coding!"));
+
 /*
 TASK K:
 Berilayotgan parametr tarkibida nechta unli harf bor
@@ -8,18 +26,20 @@ MASALAN: countVowels("string"); return 1
 Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
 bo'lganligi uchun '1'ni qaytarmoqda
  */
-function countVowels(input: string): number {
-  const vowels = "aeiouAEIOU";
-  let count = 0;
+// function countVowels(input: string): number {
+//   const vowels = "aeiouAEIOU";
+//   let count = 0;
 
-  for (let char of input) {
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
-  return count;
-}
-console.log(countVowels("string"));
+//   for (let char of input) {
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countVowels("string"));
+
+/*************************************/
 
 /** TASK J:
 
@@ -43,6 +63,9 @@ eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda */
 
 // const result = findLongestWord("I came from Uzbekistan!");
 // console.log(result);
+
+/*************************************/
+/*************************************/
 
 /** TASK I:
 
@@ -78,16 +101,8 @@ Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida
 // const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
 // console.log(result);
 
-/* Projcet Standards:
-  - Logging standards
-  - Naming standards
-      function: method, weriable =>  CAMEL  => goHome
-      class => PASCAL                       => MemberService
-      folder => KEBAB                   
-      css    => SNACE                       => button_style 
-
-  - ERROR handling 
-*/
+/*************************************/
+/*************************************/
 
 /** H2-TASK: 
 
@@ -118,6 +133,9 @@ MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 // const result = getPositive([1, -4, 2]);
 // console.log(result);
 
+/*************************************/
+/*************************************/
+
 /**G-TASK: 
 Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
 MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
@@ -137,3 +155,59 @@ MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
 // }
 // const result = getHighestIndex([5, 21, 12, 21, 8]);
 // console.log(result);
+
+/*************************************/
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* Projcet Standards:
+  - Logging standards
+  - Naming standards
+      function: method, weriable =>  CAMEL  => goHome
+      class => PASCAL                       => MemberService
+      folder => KEBAB                   
+      css    => SNACE                       => button_style 
+
+- ERROR handling 
+*/
+
+/*************************************/
+/*************************************/
+
+/*
+REQUEST:
+Traditional API
+Rest API
+GraphQL API
+
+
+******************************************
+******************************************
+
+Frontend Development:
+Traditional FD => BSSR (Admin)  => EJS
+Modern FD   => SPA (User's aplication) => REACT  
+
+
+******************************************
+******************************************
+
+Cookies:
+request join
+self destroy
+
+
+******************************************
+****************************************** 
+
+
+Validation:
+
+Frontend validation = Malumotlarni togri kirtishni tekshiradi
+Pipe validation??   = 
+Backend validation
+Database validation
+
+
+*/
