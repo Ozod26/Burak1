@@ -20,6 +20,10 @@ routerAdmin.get("/logout", restaurantController.logout);
 routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
 /** Product */
+
+/** Faqat AUTHENTICATED bolhan Restauranlar ishlataolishi kerak
+ * boshqa userlar bu pagelarga ummuman kiraolamydi
+ * Quyidagi mantiqlarni middlware orqali hosil qilamiz */
 routerAdmin.get(
   "/product/all",
   restaurantController.verifyRestaurant,

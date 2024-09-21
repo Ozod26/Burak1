@@ -19,6 +19,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
   }
 };
 
+// Ynagi productlarni hosil qilish va tanlangan productlarni yangilash matigi
 productController.createNewProduct = async (req: Request, res: Response) => {
   try {
     console.log("createNewProducts");
