@@ -1,3 +1,5 @@
+// rahmat
+
 /**TASK L:
 
 So'zlarni ketma - ketligini buzmasdan har bir so'zni
