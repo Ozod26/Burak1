@@ -1,8 +1,8 @@
 import express from "express";
 const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant.controller";
-import productController from "./controllers/product.controller";
 import makeUploader from "./libs/utils/uploader";
+import productController from "./controllers/Product.controller";
 
 /** Restaurant */
 routerAdmin.get("/", restaurantController.goHome);

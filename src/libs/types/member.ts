@@ -30,6 +30,17 @@ export interface MemberInput {
   memberPoints?: number;
 }
 
+export interface MemberUpdateInput {
+  _id: ObjectId;
+  memberstatus?: MemberStatus;
+  memberNick?: string;
+  memberPhone?: string;
+  memberPassword?: string;
+  memberAdress?: string;
+  memberDesc?: string;
+  memberImage?: string;
+}
+
 export interface LoginInput {
   memberNick: string;
   memberPassword: string;

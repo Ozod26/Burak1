@@ -6,7 +6,6 @@ import { MemberType } from "../libs/enums/member.enum";
 import Errors, { HttpCode, Message } from "../libs/Error";
 
 const memberService = new MemberService();
-
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
   try {
@@ -74,12 +73,10 @@ restaurantController.processLogin = async (
 ) => {
   try {
     console.log("processLogin");
-
-    // console.log("body:", req.body);
+    console.log("body;", req.body);
     const input: LoginInput = req.body;
-    const result = await memberService.processLogin(input);
 
-    // TODO: SESSIONS AUTHENTICATION
+    const result = await memberService.processLogin(input);
 
     req.session.member = result;
     req.session.save(function () {
@@ -90,7 +87,7 @@ restaurantController.processLogin = async (
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("Hi ${message}"); window.location.replace("admin/login")</script>`
+      `<script> alert(" ${message} "); window. location.replace('/admin/login') </script>`
     );
   }
 };
