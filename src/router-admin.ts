@@ -16,7 +16,7 @@ routerAdmin
     makeUploader("members").single("memberImage"),
     restaurantController.processSignup
   );
-routerAdmin.get("/logout", restaurantController.logout);
+routerAdmin.get("/logout", restaurantController.logOut);
 routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
 /** Product */
@@ -43,5 +43,14 @@ routerAdmin.post(
 );
 
 /** User */
-
+routerAdmin.get(
+  "/user/all",
+  restaurantController.verifyRestaurant,
+  restaurantController.getUsers
+);
+routerAdmin.post(
+  "/user/edit",
+  restaurantController.verifyRestaurant,
+  restaurantController.updateChosenUser
+);
 export default routerAdmin;

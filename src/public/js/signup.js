@@ -1,5 +1,11 @@
 console.log("Signup frontend javascript file");
 
+// $(function() {
+//   $(".member-nick").click(function () {
+//     $(".member-phone").toggle();
+//   });
+// });
+
 // image preload mantigi
 $(function () {
   const fileTarget = $(".file-box .upload-hidden");

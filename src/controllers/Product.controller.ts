@@ -17,7 +17,10 @@ productController.getAllProducts = async (req: Request, res: Response) => {
   try {
     console.log("getAllProducts");
     // console.log("req.member:", req.member);
-    res.render("products"); // views => product.ejs
+
+    const data = await productService.getAllProducts();
+
+    res.render("products", { products: data }); // views => product.ejs
   } catch (err) {
     console.log("Error, getAllProducts:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
@@ -37,21 +40,21 @@ productController.createNewProduct = async (
       throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATED_FAILED);
 
     const data: ProductInput = req.body;
-    data.productImage = req.files?.map((ele) => {
+    data.productImages = req.files?.map((ele) => {
       return ele.path;
     });
 
     // console.log("data:", data);
     await productService.createNewProduct(data);
     res.send(
-      `<script> alert("Sucessful creation!"); window.location.replace("admin/product/all")</script>`
+      `<script> alert("Sucessful creation!"); window.location.replace("/admin/product/all")</script>`
     );
   } catch (err) {
     console.log("Error, createNewProduct:", err);
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("${message}"); window.location.replace("admin/product/all")</script>`
+      `<script> alert("${message}"); window.location.replace("/admin/product/all")</script>`
     );
   }
 };

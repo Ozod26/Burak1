@@ -18,6 +18,22 @@ class ProductService {
 
   /** SSR */
 
+  public async getAllProducts(): Promise<Product[]> {
+    const result = await this.productModel.find().exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
+
+  public async ceateNewProduct(Input: ProductInput): Promise<Product> {
+    try {
+      return await this.productModel.create(Input);
+    } catch (err) {
+      console.log("Error, model:createNewProduct:", err);
+      throw new Errors(HttpCode.BAD_REQUEST, Message.CREATED_FAILED);
+    }
+  }
+
   public async createNewProduct(input: ProductInput): Promise<Product> {
     try {
       return await this.productModel.create(input);
