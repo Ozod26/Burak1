@@ -1,5 +1,43 @@
-// rahmat
+// TASK P:
+/*
+Parametr sifatida yagona object qabul qiladigan function yozing.
+Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
 
+MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+*/
+function objectToArray(input: any) {
+  let newArray = [];
+  for (let key in input) {
+    newArray.push(key, input[key]);
+  }
+  console.log(newArray);
+}
+
+objectToArray({ a: 10, b: 20 });
+
+// TASK O:
+/*
+
+Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
+Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
+
+MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]); return 45
+
+Yuqoridagi misolda array tarkibida faqatgina ikkita yagona son mavjud bular 10 hamda 35
+Qolganlari nested bo'lib yoki type'lari number emas.
+
+*/
+// function calculateSumOfNumbers(input: (number | object | boolean | string)[]) {
+//   let allNumbers: number = 0;
+//   const onlyNumber = input.forEach((ele) => {
+//     if (typeof ele === "number") {
+//       allNumbers += ele;
+//     }
+//   });
+//   console.log(allNumbers);
+// }
+
+// calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 /**TASK L:
 
 So'zlarni ketma - ketligini buzmasdan har bir so'zni
