@@ -43,6 +43,7 @@ $(function () {
 });
 
 // product creation validation form
+
 function validateForm() {
   const productName = $(".product-name").val(),
     productPrice = $(".product-price").val(),
@@ -67,6 +68,7 @@ function validateForm() {
 }
 
 // preview product image
+
 function previewFileHandler(input, order) {
   const imgClassName = input.className;
   console.log("input:", input);
