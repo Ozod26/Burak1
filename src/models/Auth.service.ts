@@ -1,16 +1,3 @@
-// import { Member } from "../libs/types/member";
-// import jwt from "jsonwebtoken";
-
-// class AuthService {
-//   constructor() {}
-
-//   public createToken(payload: Member) {
-//     return ne;
-//   }
-// }
-
-// export default AuthService;
-
 import Errors, { HttpCode, Message } from "../libs/Error";
 import { AUTH_TIMER } from "../libs/config";
 import { Member } from "../libs/types/member";
