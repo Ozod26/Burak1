@@ -11,6 +11,7 @@ import { MemberType } from "../libs/enums/member.enum";
 import Errors, { HttpCode, Message } from "../libs/Error";
 import AuthService from "../models/Auth.service";
 import { AUTH_TIMER } from "../libs/config";
+
 const memberService = new MemberService();
 const authService = new AuthService();
 
@@ -91,7 +92,6 @@ memberController.verifyAuth = async (
 ) => {
   try {
     const token = req.cookies["accessToken"];
-    console.log("tokenExampleString:===>", token);
     if (token) req.member = await authService.checkAuth(token);
     if (!req.member)
       throw new Errors(HttpCode.UNAUTHORIZED, Message.NOT_AUTHENTICATED);

@@ -1,8 +1,9 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import path from "path";
 import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import { MORGAN_FORMAT } from "./libs/config";
 
 import session from "express-session";
@@ -57,6 +58,3 @@ app.use("/admin", routerAdmin); // BSSR: EJS
 app.use("/", router); // Middlewere Design Pattern / SPA: REACT
 
 export default app;
-function cookieParser(): any {
-  throw new Error("Function not implemented.");
-}

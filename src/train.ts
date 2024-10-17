@@ -1,3 +1,25 @@
+// TASK W
+/*
+Shunday function yozing, u o'ziga parametr sifatida
+yagona array va number qabul qilsin. Siz tuzgan function
+arrayni numberda berilgan uzunlikda kesib bo'laklarga
+ajratgan holatida qaytarsin.
+MASALAN: chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+return [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]];
+
+Yuqoridagi namunada berilayotgan array ikkinchi parametr 3'ga
+asoslanib 3 bo'lakga bo'linib qaytmoqda. Qolgani esa o'z holati qolyapti
+*/
+function chunkArray(arr: number[], size: number) {
+  let result = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  console.log(result);
+}
+
+chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+
 // TASK P:
 /*
 Parametr sifatida yagona object qabul qiladigan function yozing.
@@ -5,15 +27,15 @@ Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
 
 MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 */
-function objectToArray(input: any) {
-  let newArray = [];
-  for (let key in input) {
-    newArray.push(key, input[key]);
-  }
-  console.log(newArray);
-}
+// function objectToArray(input: any) {
+//   let newArray = [];
+//   for (let key in input) {
+//     newArray.push(key, input[key]);
+//   }
+//   console.log(newArray);
+// }
 
-objectToArray({ a: 10, b: 20 });
+// objectToArray({ a: 10, b: 20 });
 
 // TASK O:
 /*
