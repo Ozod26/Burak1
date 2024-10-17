@@ -24,6 +24,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 
 /** 2-SESSIONS **/
@@ -56,3 +57,6 @@ app.use("/admin", routerAdmin); // BSSR: EJS
 app.use("/", router); // Middlewere Design Pattern / SPA: REACT
 
 export default app;
+function cookieParser(): any {
+  throw new Error("Function not implemented.");
+}
