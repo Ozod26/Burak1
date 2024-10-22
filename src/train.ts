@@ -1,3 +1,32 @@
+// TASK Y
+/*
+Shunday function yozing, uni 2'ta array parametri bo'lsin.
+Bu function ikkala arrayda ham ishtirok etgan bir xil
+qiymatlarni yagona arrayga joylab qaytarsin.
+
+MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+joylab return qilmoqda.
+*/
+
+function findIntersection(input: number[], input2: number[]) {
+  let result: number[] = [];
+
+  input.forEach((ele) => {
+    input2.forEach((item) => {
+      if (ele === item) {
+        result.push(ele);
+      }
+    });
+  });
+  return result;
+}
+
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
 // TASK X
 /*
 Shunday function yozing, uni object va string parametrlari bo'lsin.
@@ -13,27 +42,27 @@ Funktsiya, shu ikkinchi argument 'model', birinchi argument object
 tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
 */
 
-function countOccurrences(obj: object, word: string) {
-  let count = 0;
-  function nestedObj(innerObj: any) {
-    for (let key in innerObj) {
-      if (key === word) {
-        count++;
-      }
+// function countOccurrences(obj: object, word: string) {
+//   let count = 0;
+//   function nestedObj(innerObj: any) {
+//     for (let key in innerObj) {
+//       if (key === word) {
+//         count++;
+//       }
 
-      if (typeof innerObj[key] === "object" && innerObj[key] !== null) {
-        nestedObj(innerObj[key]);
-      }
-    }
-  }
-  nestedObj(obj);
-  console.log(count);
-}
+//       if (typeof innerObj[key] === "object" && innerObj[key] !== null) {
+//         nestedObj(innerObj[key]);
+//       }
+//     }
+//   }
+//   nestedObj(obj);
+//   console.log(count);
+// }
 
-countOccurrences(
-  { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
-  "model"
-);
+// countOccurrences(
+//   { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+//   "model"
+// );
 
 // TASK W
 /*
