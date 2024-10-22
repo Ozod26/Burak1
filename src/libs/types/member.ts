@@ -32,7 +32,7 @@ export interface MemberInput {
 
 export interface MemberUpdateInput {
   _id: ObjectId;
-  memberstatus?: MemberStatus;
+  memberStatus?: MemberStatus;
   memberNick?: string;
   memberPhone?: string;
   memberPassword?: string;
