@@ -10,16 +10,17 @@ import {
 import ProductModel from "../schema/Product.model";
 import { ProductStatus } from "../libs/enums/product.enum";
 import { ObjectId } from "mongoose";
-import ViewService from "./View.service";
 import { ViewInput } from "../libs/types/view";
 import { ViewGroup } from "../libs/enums/view.enum";
+import ViewService from "./View.service";
 
 class ProductService {
   private readonly productModel;
-  viewService: any;
+  public viewService;
 
   constructor() {
     this.productModel = ProductModel;
+    this.viewService = new ViewService();
   }
 
   //** SPA */
