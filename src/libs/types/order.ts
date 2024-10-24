@@ -39,7 +39,7 @@ export interface OrderInquiry {
   orderStatus: OrderStatus;
 }
 
-// export interface OrderUpdateInput {
-//   orderId: String;
-//   orderStatus: OrderStatus;
-// }
+export interface OrderUpdateInput {
+  orderId: String;
+  orderStatus: OrderStatus;
+}
