@@ -25,7 +25,7 @@ const orderSchema = new Schema(
       ref: "Member",
     },
   },
-  { timestamps: true }
+  { timestamps: true, collection: "orders" }
 );
 
 export default mongoose.model("Order", orderSchema);
